@@ -1,0 +1,20 @@
+export const QUICK_SORT_CODE = {
+  language: 'java' as const,
+  lines: [
+    'static void quickSort(int[] a, int lo, int hi) {',
+    '  if (lo >= hi) return;',
+    '  int pivote = a[lo];',
+    '  int i = lo + 1;',
+    '  int j = hi;',
+    '  while (true) {',
+    '    while (i <= j && a[i] <= pivote) i++;',
+    '    while (i <= j && a[j] > pivote) j--;',
+    '    if (i >= j) break;',
+    '    swap(a, i, j);',
+    '  }',
+    '  swap(a, lo, j);',
+    '  quickSort(a, lo, j - 1);',
+    '  quickSort(a, j + 1, hi);',
+    '}',
+  ],
+}
